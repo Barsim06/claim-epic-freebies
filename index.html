@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Labirinto Quantico — Il sito più difficile</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <canvas id="aura" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <div class="brand">
+      <span class="sigil">⌬</span>
+      <div>
+        <p class="eyebrow">Protocollo di Accesso</p>
+        <h1>Labirinto Quantico</h1>
+      </div>
+    </div>
+    <nav>
+      <a href="#challenges">Sfide</a>
+      <a href="#systems">Sistemi</a>
+      <a href="#cipher">Cifrario</a>
+      <a href="#briefing">Briefing</a>
+    </nav>
+    <button class="ghost" id="panic">Senza paura</button>
+  </header>
+
+  <main>
+    <section class="hero" id="briefing">
+      <div class="hero-copy">
+        <p class="tag">Missione ⟡ Alta Complessità</p>
+        <h2>Un sito che respira, reagisce e ti mette alla prova.</h2>
+        <p class="lead">
+          Ogni scelta modifica la matrice. Ogni input cambia il ritmo, i colori e la pressione. Riuscirai a
+          mantenere stabile il cuore del labirinto?
+        </p>
+        <div class="hero-actions">
+          <button class="primary" id="calibrate">Calibra il nucleo</button>
+          <button class="secondary" id="toggleGrid">Attiva griglia</button>
+        </div>
+        <div class="meter">
+          <label for="difficulty">Difficoltà</label>
+          <input id="difficulty" type="range" min="1" max="10" step="1" value="6" />
+          <span id="difficultyValue">06</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-header">
+          <p>Stato del sistema</p>
+          <span class="pulse"></span>
+        </div>
+        <div class="readout">
+          <div>
+            <h3>Sincronizzazione</h3>
+            <p id="sync">83%</p>
+          </div>
+          <div>
+            <h3>Risonanza</h3>
+            <p id="resonance">47 Hz</p>
+          </div>
+          <div>
+            <h3>Stabilità</h3>
+            <p id="stability">Media</p>
+          </div>
+        </div>
+        <div class="glyph">
+          <span>∆</span>
+          <span>≡</span>
+          <span>◈</span>
+          <span>⊙</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="challenges">
+      <div class="section-heading">
+        <h2>Sequenza delle sfide</h2>
+        <p>Ogni modulo è interdipendente. Completa i nodi in ordine o rischia il collasso.</p>
+      </div>
+      <div class="cards">
+        <article class="challenge" data-challenge="0">
+          <h3>Phase Shift</h3>
+          <p>Ricalibra il flusso temporale con tre impulsi consecutivi.</p>
+          <button>Attiva</button>
+        </article>
+        <article class="challenge" data-challenge="1">
+          <h3>Mirror Loop</h3>
+          <p>Duplica il segnale e verifica la coerenza del pattern.</p>
+          <button>Attiva</button>
+        </article>
+        <article class="challenge" data-challenge="2">
+          <h3>Gravity Well</h3>
+          <p>Compatta il rumore, lascia intatto solo il nucleo stabile.</p>
+          <button>Attiva</button>
+        </article>
+        <article class="challenge" data-challenge="3">
+          <h3>Entropy Cage</h3>
+          <p>Sigilla l'energia residua senza interrompere il ciclo vitale.</p>
+          <button>Attiva</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="systems" id="systems">
+      <div class="system-panel">
+        <h2>Telemetry Array</h2>
+        <p>Il labirinto si auto-organizza. Cambia le traiettorie con i controlli dinamici.</p>
+        <div class="toggle-group">
+          <label><input type="checkbox" id="orbit" checked /> Orbite multi-livello</label>
+          <label><input type="checkbox" id="echo" checked /> Eco neurale</label>
+          <label><input type="checkbox" id="flare" /> Flare difensivi</label>
+        </div>
+        <div class="matrix">
+          <div>
+            <span>Traiettorie</span>
+            <strong id="paths">124</strong>
+          </div>
+          <div>
+            <span>Memoria</span>
+            <strong id="memory">67%</strong>
+          </div>
+          <div>
+            <span>Indice</span>
+            <strong id="index">Δ-9</strong>
+          </div>
+        </div>
+      </div>
+      <div class="system-screen">
+        <div class="screen-header">
+          <h3>Console Sequenziale</h3>
+          <span id="mode">AUTO</span>
+        </div>
+        <div class="terminal" id="terminal">
+          <p>> Sistema inizializzato. In attesa di input.</p>
+        </div>
+        <form class="terminal-input" id="terminalForm">
+          <input type="text" id="terminalField" placeholder="Scrivi un comando" autocomplete="off" />
+          <button type="submit">Invia</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="cipher" id="cipher">
+      <div class="cipher-card">
+        <h2>Cifrario adattivo</h2>
+        <p>Risolvi la sequenza per sbloccare la modalità Omega.</p>
+        <div class="cipher-grid">
+          <div class="cipher-cell">02</div>
+          <div class="cipher-cell">09</div>
+          <div class="cipher-cell">15</div>
+          <div class="cipher-cell">?</div>
+        </div>
+        <label for="cipherInput">Completa la sequenza</label>
+        <div class="cipher-input">
+          <input id="cipherInput" type="text" placeholder="Inserisci il prossimo valore" />
+          <button id="cipherButton">Verifica</button>
+        </div>
+        <p id="cipherResult">Suggerimento: pensa alle distanze tra le stelle.</p>
+      </div>
+      <div class="cipher-visual">
+        <div class="orb">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p>Attiva i livelli interni per vedere la distorsione completa.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Costruito per chi vuole un sito davvero difficile. Nessun compromesso, solo complessità.</p>
+    <small>Labirinto Quantico © 2049</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
