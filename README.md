@@ -99,3 +99,50 @@ To enable this feature, uncomment the following lines. (remove the `#` sign from
 ```
 
 **Note** _This feature is not limited to you. Anyone who stars your fork can trigger the action._
+
+---
+
+## Dashboard ACC (localhost su iPad)
+
+Questa repo include una dashboard statica per Assetto Corsa Competizione, pensata per essere aperta da iPad su rete locale.
+
+### Avvio rapido
+
+1. Avvia un server statico dalla root del repo:
+
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+2. Apri la dashboard dal browser del PC:
+
+   ```text
+   http://localhost:8000/dashboard/index.html
+   ```
+
+3. Sul tuo iPad, apri Safari e usa l'IP del PC sulla stessa rete Wi-Fi:
+
+   ```text
+   http://IP_DEL_TUO_PC:8000/dashboard/index.html
+   ```
+
+Se apri solo la root (`http://IP_DEL_TUO_PC:8000`), troverai una pagina di avvio rapido con il link diretto alla dashboard.
+
+### Telemetria live
+
+La dashboard accetta JSON via WebSocket (es. `ws://192.168.1.10:9000`). Il payload atteso è:
+
+```json
+{
+  "speed": 173.4,
+  "gear": 4,
+  "rpm": 6420,
+  "fuel": 32.5,
+  "lap": 12,
+  "position": 3,
+  "delta": -0.284,
+  "target": "01:53.420"
+}
+```
+
+Se non è disponibile un bridge telemetria, la dashboard mostra dati demo.
