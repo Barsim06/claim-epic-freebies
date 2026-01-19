@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ACC Dashboard - Avvio rapido</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        background: #0b0b12;
+        color: #f5f6fb;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        background: radial-gradient(circle at top, rgba(46, 55, 108, 0.4), transparent 55%),
+          #0b0b12;
+      }
+
+      .card {
+        max-width: 560px;
+        width: 100%;
+        background: rgba(19, 22, 40, 0.85);
+        border: 1px solid rgba(148, 160, 230, 0.2);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: 0 20px 40px rgba(9, 10, 24, 0.4);
+      }
+
+      h1 {
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        margin-bottom: 12px;
+      }
+
+      p {
+        color: #b7bdd9;
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      a {
+        color: #c3ccff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        border-radius: 10px;
+        background: #3a4fff;
+        color: #fff;
+      }
+
+      .button.secondary {
+        background: transparent;
+        border: 1px solid rgba(148, 160, 230, 0.4);
+        color: #c3ccff;
+      }
+
+      code {
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        color: #c3ccff;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>ACC Dashboard pronta</h1>
+      <p>
+        Questa pagina evita l'errore 404 quando apri la root del server. Usa il pulsante qui sotto
+        per aprire subito la dashboard.
+      </p>
+      <div class="actions">
+        <a class="button" href="dashboard/index.html">Apri dashboard</a>
+        <a class="button secondary" href="README.md">Leggi istruzioni</a>
+      </div>
+      <p>
+        Suggerimento: da iPad usa <code>http://IP_DEL_TUO_PC:8000</code> per vedere questa pagina,
+        poi apri la dashboard.
+      </p>
+    </main>
+  </body>
+</html>
