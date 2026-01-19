@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ACC Dashboard - Localhost</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="dashboard">
+      <header class="dashboard__header">
+        <div>
+          <p class="eyebrow">Assetto Corsa Competizione</p>
+          <h1>Dashboard Localhost</h1>
+          <p class="subtitle">Ottimizzata per iPad su rete locale</p>
+        </div>
+        <div class="status">
+          <span id="connection-dot" class="status__dot status__dot--offline"></span>
+          <div>
+            <p class="status__label">Connessione</p>
+            <p id="connection-text" class="status__value">Mock data</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card card--speed">
+          <p class="card__label">Velocità</p>
+          <p class="card__value">
+            <span id="speed">0</span>
+            <span class="card__unit">km/h</span>
+          </p>
+        </article>
+        <article class="card card--gear">
+          <p class="card__label">Marcia</p>
+          <p id="gear" class="card__value">N</p>
+        </article>
+        <article class="card">
+          <p class="card__label">RPM</p>
+          <p class="card__value">
+            <span id="rpm">0</span>
+            <span class="card__unit">rpm</span>
+          </p>
+          <div class="rpm-bar">
+            <div id="rpm-fill" class="rpm-bar__fill"></div>
+          </div>
+        </article>
+        <article class="card">
+          <p class="card__label">Benzina</p>
+          <p class="card__value">
+            <span id="fuel">0.0</span>
+            <span class="card__unit">L</span>
+          </p>
+        </article>
+        <article class="card">
+          <p class="card__label">Giro</p>
+          <p class="card__value" id="lap">0</p>
+          <p class="card__meta">Posizione <span id="position">-</span></p>
+        </article>
+        <article class="card">
+          <p class="card__label">Delta</p>
+          <p class="card__value card__value--delta" id="delta">+0.000</p>
+          <p class="card__meta">Target <span id="target">--:--.---</span></p>
+        </article>
+      </section>
+
+      <section class="config">
+        <h2>Connessione telemetria</h2>
+        <p>
+          Inserisci l'URL WebSocket del tuo bridge telemetria (es: <code>ws://192.168.1.10:9000</code>).
+          Se non è disponibile, la dashboard usa dati demo.
+        </p>
+        <form id="ws-form" class="config__form">
+          <label>
+            WebSocket URL
+            <input id="ws-url" type="text" placeholder="ws://localhost:9000" />
+          </label>
+          <button type="submit">Connetti</button>
+          <button id="disconnect" type="button" class="secondary">Disconnetti</button>
+        </form>
+        <p class="config__hint">
+          Suggerimento: apri questa pagina su iPad via <strong>http://IP_DEL_TUO_PC:PORTA</strong>.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
